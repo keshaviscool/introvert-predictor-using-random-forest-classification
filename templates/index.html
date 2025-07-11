@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Are you an Introvert?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffe6f0;
+         
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #333;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff1493;
+        }
+        .meme {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .btn-submit {
+            background-color: #ff69b4;
+            border: none;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+        }
+        .btn-submit:hover {
+            background-color: #ff1493;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.4rem;
+            text-align: center;
+            color: #ff4500;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Are you an Introvert? 🤔</h1>
+        <form id="introvertForm" method="POST" action="/">
+            <div class="mb-3">
+                <label for="timeAlone" class="form-label">Time spent alone (hrs per day, excl. sleeping)</label>
+                <input type="number" class="form-control" id="timeAlone" name="timeAlone" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Stage Fear?</label>
+                <select class="form-select" id="stageFear" name="stageFear">
+                    <option value="yes">Yes 😬</option>
+                    <option value="no">No 😎</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="socialEvents" class="form-label">Social events per month</label>
+                <input type="number" class="form-control" id="socialEvents" name="socialEvents" required>
+            </div>
+            <div class="mb-3">
+                <label for="goingOutside" class="form-label">Going outsides per month</label>
+                <input type="number" class="form-control" id="goingOutside" name="goingOutside" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Drained after socialising?</label>
+                <select class="form-select" id="drained" name="drained">
+                    <option value="yes">Yes 😵</option>
+                    <option value="no">No 🤩</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="friendsCircle" class="form-label">Friends circle size</label>
+                <input type="number" class="form-control" id="friendsCircle" name="friendsCircle" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Post frequency on social media</label>
+                <select class="form-select" id="postFrequency" name="postFrequency">
+                    <option value="high">High 🔥</option>
+                    <option value="medium">Medium 🙂</option>
+                    <option value="low">Low 💤</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-submit">Submit & Find Out 😱</button>
+        </form>
+        <div class="result" id="result">
+            {% if pred == 1 %}🔥 Extrovert spotted! Chill bro, save some energy for others.{% endif %}{% if pred == 0 %}💯 Bro you’re 99% introvert! Time to touch some grass 🌱😂{% endif %}
+        </div>
+    </div>
+</body>
+</html>
