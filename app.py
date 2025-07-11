@@ -50,5 +50,3 @@ def index():
         return render_template("index.html", result=result, pred=pred)
 
     return render_template("index.html")
-
-app.run(debug=True)
